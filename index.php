@@ -1,3 +1,5 @@
+<?php
+
 include 'roman-numerals.php'
 
 $numerals = array(
