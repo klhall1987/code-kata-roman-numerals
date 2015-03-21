@@ -7,5 +7,5 @@
  * @return integer
  */
 function roman_numerals( $numerals ) {
-
+	return 'test';
 }
