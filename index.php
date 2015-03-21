@@ -5,17 +5,17 @@ require_once 'roman-numerals.php';
 
 $numerals = array(
 	'I'    => 1,
-	'II'   => 2,
+	'ii'   => 2,
 	'III'  => 3,
 	'IV'   => 4,
 	'V'    => 5,
-	'VI'   => 6,
+	'vi'   => 6,
 	'VII'  => 7,
 	'VIII' => 8,
-	'IX'   => 9,
+	'ix'   => 9,
 	'X'    => 10,
 	'XI'   => 11,
-	'XII'  => 12,
+	'xii'  => 12,
 	'XIII' => 13,
 	'XIV'  => 14,
 	'XV'   => 15
