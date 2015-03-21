@@ -21,8 +21,6 @@ $numerals = array(
 	'XV'   => 15
 );
 
-echo '<h1>Code Kata - Roman Numerals</h1>';
-
 foreach( $numerals as $test => $answer ) {
-	echo $test . ' is ' . roman_numerals( $test ) . ". " . check('roman_numerals', $test, $answer) . "<br />";
+	echo $test . ' is ' . roman_numerals( $test ) . ". " . check('roman_numerals', $test, $answer) . "\n";
 }
