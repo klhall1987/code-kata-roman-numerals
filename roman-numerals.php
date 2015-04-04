@@ -14,25 +14,22 @@ function roman_numerals( $numerals ) {
 	// Split the numerals array into an array of stings for each line. 
 	$arabic_Numbers = str_split( $numerals );
 
-	// Converting the arrays into strings 
+	// Convert the arrays into strings 
 	$imp = implode('' , $arabic_Numbers);
 
-	//count to find the position of the numeral. 
+	//count to find the length of the string. 
 	$result = strlen($imp);
 
-	//varible for I.
-	$empty_Numeral = '';
+	// An empty varible to set the numeral in.
+	$empty_Numeral = 'i';
 
-	//find the position of numeral I. 
-	$str_pos = stripos($imp, $empty_Numeral);
+	// find the position of the numeral. 
+	$numeral_Pos = stripos($imp, $empty_Numeral);
+
+	
 
 	// being used for debug, Remove once code is complete
-	var_dump($str_pos);
+	var_dump($imp);
+	return $imp;
 
-	$answer = 0;
-
-	if($empty_Numeral = 'i' && $str_pos <= 0  ){
-
-	}
-	return $empty_Numeral;
 }
