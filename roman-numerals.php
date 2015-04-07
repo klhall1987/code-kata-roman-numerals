@@ -8,28 +8,42 @@
  */
  
 function roman_numerals( $numerals ) {
-	// Set the numerals array to all lower case.  
+
 	$numerals = strtolower( $numerals );
+	$numbers = str_split( $numerals );
+	$count = count( $numbers );
 
-	// Split the numerals array into an array of stings for each line. 
-	$arabic_Numbers = str_split( $numerals );
+	foreach( $numbers as $key => $value ) {
+		if( $value == 'i' ) {
+			$numbers[ $key ] = 1;
+		} elseif( $value == 'v' ) {
+			$numbers[ $key ] = 5;
+		} elseif( $value == 'x' ) {
+			$numbers[ $key ] = 10;
+		} elseif ($value == 'l' ){
+			$numbers[ $key ] = 50;
+		}
+	}
 
-	// Convert the arrays into strings 
-	$imp = implode('' , $arabic_Numbers);
-
-	//count to find the length of the string. 
-	$result = strlen($imp);
-
-	// An empty varible to set the numeral in.
-	$empty_Numeral = 'i';
-
-	// find the position of the numeral. 
-	$numeral_Pos = stripos($imp, $empty_Numeral);
-
+	if ( $count == 1 ) {
+		$result = $numbers[ 0 ];
+		return $result;
+	} elseif ( $count == 2 && ( ( $numbers[ 0 ] > $numbers[ 1 ] ) || ( $numbers[ 0 ] == $numbers[ 1 ] ) ) ) {
+		$result = $numbers[ 0 ] + $numbers[ 1 ];
+		return $result;
+	} elseif ( $count == 2 && ( $numbers[ 0 ] < $numbers[ 1 ] ) ) {
+		$result = $numbers[ 1 ] - $numbers[ 0 ];
+		return $result;
+	} elseif ( $count == 3 && ( $numbers[ 1 ] < $numbers[ 2 ] ) ) {
+		$result = $numbers[ 2 ] - $numbers[ 1 ];
+		$result = $result + $numbers[ 0 ];
+		return $result;
+	} elseif ( $count == 3 ) {
+		$result = $numbers[ 0 ] + $numbers[ 1 ] + $numbers[ 2 ];
+		return $result;
 	
-
-	// being used for debug, Remove once code is complete
-	var_dump($imp);
-	return $imp;
-
+	} elseif ( $count == 4 ) {
+		$result = $numbers[ 0 ] + $numbers[ 1 ] + $numbers[ 2 ] + $numbers[ 3 ];
+		return $result;
+	}
 }

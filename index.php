@@ -18,8 +18,29 @@ $numerals = array(
 	'xii'  => 12,
 	'XIII' => 13,
 	'XIV'  => 14,
-	'XV'   => 15
+	'XV'   => 15,
+	'L'	   => 50,
+	'lxi'  => 61
 );
+
+?> 
+
+Input Your Numerals Here:<br>
+<input type="text" name="convert" id="convert">
+<input type="submit" id="mySubmit" method="post" hidden="hidden">
+<button onclick="calculate()">Calculate</button>
+<p id="demo"></p>
+</form>
+
+<script>
+function calculate(){
+	var x =document.getElementById("convert").value;
+	document.getElementById("demo").innerHTML = x; 
+}
+</script>
+<?php
+
+
 
 foreach( $numerals as $test => $answer ) {
 	echo $test . ' is ' . roman_numerals( $test ) . ". " . check('roman_numerals', $test, $answer) . "\n";
